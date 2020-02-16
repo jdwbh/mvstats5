@@ -1,0 +1,391 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={《多元统计分析及R语言建模》第2章},
+  pdfauthor={王斌会},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{《多元统计分析及R语言建模》第2章}
+\author{王斌会}
+\date{2020.2.1}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rm}\NormalTok{(}\DataTypeTok{list=}\KeywordTok{ls}\NormalTok{())                               }\CommentTok{#清理内存}
+\KeywordTok{options}\NormalTok{(}\DataTypeTok{digits=}\DecValTok{4}\NormalTok{)                           }\CommentTok{#输出结果位数}
+\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar=}\KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{1}\NormalTok{))                         }\CommentTok{#设置图片输出位置}
+\KeywordTok{library}\NormalTok{(openxlsx)}
+\KeywordTok{library}\NormalTok{(knitr)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{section}{%
+\subsection{2.1}\label{section}}
+
+　　\textbf{对下面的相关系数矩阵，试用R语言求其逆矩阵、特征根和特征向量。要求写出R语言计算函数。}
+\[R=\begin{bmatrix}
+1.00&0.80&0.26&0.67&0.34\\
+0.80&1.00&0.33&0.59&0.34\\
+0.26&0.33&1.00&0.37&0.21\\
+0.67&0.59&0.37&1.00&0.35\\
+0.34&0.34&0.21&0.35&1.00
+\end{bmatrix}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{R=}\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\FloatTok{1.00}\NormalTok{,}\FloatTok{0.80}\NormalTok{,}\FloatTok{0.26}\NormalTok{,}\FloatTok{0.67}\NormalTok{,}\FloatTok{0.34}\NormalTok{,}\FloatTok{0.80}\NormalTok{,}\FloatTok{1.00}\NormalTok{,}\FloatTok{0.33}\NormalTok{,}\FloatTok{0.59}\NormalTok{,}\FloatTok{0.34}\NormalTok{,}\FloatTok{0.26}\NormalTok{,}\FloatTok{0.33}\NormalTok{,}
+\FloatTok{1.00}\NormalTok{,}\FloatTok{0.37}\NormalTok{,}\FloatTok{0.21}\NormalTok{,}\FloatTok{0.67}\NormalTok{,}\FloatTok{0.59}\NormalTok{,}\FloatTok{0.37}\NormalTok{,}\FloatTok{1.00}\NormalTok{,}\FloatTok{0.35}\NormalTok{,}\FloatTok{0.34}\NormalTok{,}\FloatTok{0.34}\NormalTok{,}\FloatTok{0.21}\NormalTok{,}\FloatTok{0.35}\NormalTok{,}\FloatTok{1.00}\NormalTok{),}\DataTypeTok{nrow=}\DecValTok{5}\NormalTok{,}\DataTypeTok{ncol=}\DecValTok{5}\NormalTok{);R           }\CommentTok{#生成矩阵R}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+     [,1] [,2] [,3] [,4] [,5]
+[1,] 1.00 0.80 0.26 0.67 0.34
+[2,] 0.80 1.00 0.33 0.59 0.34
+[3,] 0.26 0.33 1.00 0.37 0.21
+[4,] 0.67 0.59 0.37 1.00 0.35
+[5,] 0.34 0.34 0.21 0.35 1.00
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{R.=}\KeywordTok{solve}\NormalTok{(R);R.       }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+        [,1]    [,2]     [,3]    [,4]     [,5]
+[1,]  3.3881 -2.1222  0.23706 -1.0685 -0.10623
+[2,] -2.1222  2.9421 -0.33593 -0.1331 -0.16164
+[3,]  0.2371 -0.3359  1.20699 -0.3764 -0.08812
+[4,] -1.0685 -0.1331 -0.37637  2.0091 -0.21562
+[5,] -0.1062 -0.1616 -0.08812 -0.2156  1.18505
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{R.e=}\KeywordTok{eigen}\NormalTok{(R,}\DataTypeTok{symmetric =}\NormalTok{ T);R.e    }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+eigen() decomposition
+$values
+[1] 2.7923 0.8263 0.7791 0.4206 0.1818
+
+$vectors
+        [,1]     [,2]    [,3]     [,4]     [,5]
+[1,] -0.5255  0.34022 -0.1665  0.15938  0.74494
+[2,] -0.5187  0.23435 -0.1778  0.50823 -0.62142
+[3,] -0.3131 -0.90308 -0.2287  0.14943  0.10844
+[4,] -0.4966  0.03869 -0.1186 -0.83116 -0.21673
+[5,] -0.3318 -0.11084  0.9350  0.05616  0.01355
+\end{verbatim}
+
+\hypertarget{section-1}{%
+\subsection{2.2}\label{section-1}}
+
+　　\textbf{某厂对50个计件工人某月份工资进行登记，获得以下原始资料（单位：元）。试按组距为300编制频数表，计算频数、频率和累计频率，并绘制直方图。}
+
+1465 1760 1985 2270 2980 1375 1735 1940 2220 2670 1405 1755 1965 2240
+2820 1295 1645 1880 2110 2550 1355 1710 1910 2190 2600 1265 1625 1865
+2095 2520 1225 1605 1845 2040 2430 1175 1835 2030 2370 1000 1535 1810
+2010 2290 1125 1575 1815 2030 2320
+
+\hypertarget{section-2}{%
+\subsubsection{2.2.1}\label{section-2}}
+
+　　\textbf{写出R语言程序。}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d2}\FloatTok{.2}\NormalTok{=}\KeywordTok{read.xlsx}\NormalTok{(}\StringTok{'mvexer5.xlsx'}\NormalTok{,}\DataTypeTok{sheet=}\StringTok{'E2.2'}\NormalTok{);}\KeywordTok{tail}\NormalTok{(d2}\FloatTok{.2}\NormalTok{)  }\CommentTok{#读取数据并显示后六行}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      X
+45 2290
+46 1125
+47 1575
+48 1815
+49 2030
+50 2320
+\end{verbatim}
+
+　　先对数据进行简单的统计分析：
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{min}\NormalTok{(d2}\FloatTok{.2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{max}\NormalTok{(d2}\FloatTok{.2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 2980
+\end{verbatim}
+
+　　可以得到某月份最低工资为1000元,最高工资为2980元。
+
+　　画出组距为300的直方图：
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{H1=}\KeywordTok{hist}\NormalTok{(d2}\FloatTok{.2}\OperatorTok{$}\NormalTok{X,}\DataTypeTok{breaks=}\KeywordTok{seq}\NormalTok{(}\DecValTok{900}\NormalTok{,}\DecValTok{3000}\NormalTok{,}\DecValTok{300}\NormalTok{))     }\CommentTok{#以组距为300画直方图}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{多元练习题2_files/figure-latex/block2.2.2,-1.pdf}
+
+　　编制频数表，列出频数、频率和累计频率：
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{names}\NormalTok{(H1)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] "breaks"   "counts"   "density"  "mids"     "xname"    "equidist"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{data.frame}\NormalTok{(}\StringTok{'组中值'}\NormalTok{=H1}\OperatorTok{$}\NormalTok{mids,}\StringTok{'频数'}\NormalTok{=H1}\OperatorTok{$}\NormalTok{counts,}\StringTok{'频率'}\NormalTok{=H1}\OperatorTok{$}\NormalTok{density}\OperatorTok{*}\DecValTok{300}\NormalTok{,}\StringTok{'累计频率'}\NormalTok{=}\KeywordTok{cumsum}\NormalTok{(H1}\OperatorTok{$}\NormalTok{density}\OperatorTok{*}\DecValTok{300}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+  组中值 频数 频率 累计频率
+1   1050    3 0.06     0.06
+2   1350    7 0.14     0.20
+3   1650   10 0.20     0.40
+4   1950   15 0.30     0.70
+5   2250    8 0.16     0.86
+6   2550    5 0.10     0.96
+7   2850    2 0.04     1.00
+\end{verbatim}
+
+\hypertarget{section-3}{%
+\subsubsection{2.2.3}\label{section-3}}
+
+　　\textbf{用R语言作正态概率图并分析之：}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{qqnorm}\NormalTok{(d2}\FloatTok{.2}\OperatorTok{$}\NormalTok{X);}\KeywordTok{qqline}\NormalTok{(d2}\FloatTok{.2}\OperatorTok{$}\NormalTok{X)        }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{多元练习题2_files/figure-latex/block2.3.5-1.pdf}
+
+　　由正态概率图可以看出数据点基本是一条直线，因此数据可以近似看作正态分布。
+
+\hypertarget{section-4}{%
+\subsection{2.3}\label{section-4}}
+
+　　\textbf{以下是一份关学生是否抽烟与每天学习时间长短关系的调查数据，试用R语言对其进行基本统计分析。}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{d2}\FloatTok{.3}\NormalTok{=}\KeywordTok{read.xlsx}\NormalTok{(}\StringTok{'mvexer5.xlsx'}\NormalTok{,}\DataTypeTok{sheet=}\StringTok{'E2.3'}\NormalTok{);d2}\FloatTok{.3}  \CommentTok{#读取数据}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+   编号 是否抽烟 每天学习时间
+1     1       是    少于5小时
+2     2       否     5-10小时
+3     3       否     5-10小时
+4     4       是   超过10小时
+5     5       否   超过10小时
+6     6       是    少于5小时
+7     7       是     5-10小时
+8     8       是    少于5小时
+9     9       否   超过10小时
+10   10       是     5-10小时
+\end{verbatim}
+
+　　对数据进行简单的统计分析：
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{dim}\NormalTok{(d2}\FloatTok{.3}\NormalTok{);}\KeywordTok{names}\NormalTok{(d2}\FloatTok{.3}\NormalTok{)                       }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 10  3
+\end{verbatim}
+
+\begin{verbatim}
+[1] "编号"         "是否抽烟"     "每天学习时间"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str}\NormalTok{(d2}\FloatTok{.3}\NormalTok{)                                   }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+'data.frame':   10 obs. of  3 variables:
+ $ 编号        : num  1 2 3 4 5 6 7 8 9 10
+ $ 是否抽烟    : chr  "是" "否" "否" "是" ...
+ $ 每天学习时间: chr  "少于5小时" "5-10小时" "5-10小时" "超过10小时" ...
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(d2}\FloatTok{.3}\NormalTok{)                               }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+      编号         是否抽烟         每天学习时间      
+ Min.   : 1.00   Length:10          Length:10         
+ 1st Qu.: 3.25   Class :character   Class :character  
+ Median : 5.50   Mode  :character   Mode  :character  
+ Mean   : 5.50                                        
+ 3rd Qu.: 7.75                                        
+ Max.   :10.00                                        
+\end{verbatim}
+
+　　可以看到抽取学生中4位不抽烟，6位抽烟，每天学习时间小于5小时的有3位，5-10小时的有4位，超过10小时的有3位，抽烟情况和学习时间分别的分布比较均匀。
+
+\hypertarget{section-5}{%
+\subsection{2.4　　　　}\label{section-5}}
+
+　　\textbf{试编制进行计量数据频数表分析的R语言函数。}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ch=}\ControlFlowTok{function}\NormalTok{(X)\{}
+\NormalTok{    H=}\KeywordTok{hist}\NormalTok{(X)}
+\NormalTok{    n=H}\OperatorTok{$}\NormalTok{breaks[}\DecValTok{2}\NormalTok{]}\OperatorTok{-}\NormalTok{H}\OperatorTok{$}\NormalTok{breaks[}\DecValTok{1}\NormalTok{]}
+\NormalTok{    c=}\KeywordTok{data.frame}\NormalTok{(}\StringTok{'组中值'}\NormalTok{=H}\OperatorTok{$}\NormalTok{mids,}\StringTok{'频数'}\NormalTok{=H}\OperatorTok{$}\NormalTok{counts,}\StringTok{'频率'}\NormalTok{=H}\OperatorTok{$}\NormalTok{density}\OperatorTok{*}\NormalTok{n,}\StringTok{'累计频率'}\NormalTok{=}\KeywordTok{cumsum}\NormalTok{(H}\OperatorTok{$}\NormalTok{density}\OperatorTok{*}\NormalTok{n))}
+\NormalTok{    c}
+\NormalTok{\}}
+\KeywordTok{ch}\NormalTok{(d2}\FloatTok{.2}\OperatorTok{$}\NormalTok{X)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{多元练习题2_files/figure-latex/block2.4-1.pdf}
+
+\begin{verbatim}
+  组中值 频数 频率 累计频率
+1   1250   10 0.20     0.20
+2   1750   20 0.40     0.60
+3   2250   14 0.28     0.88
+4   2750    6 0.12     1.00
+\end{verbatim}
+
+\end{document}

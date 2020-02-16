@@ -3,6 +3,8 @@ title: "《多元统计分析及R语言建模》第2章"
 author: "王斌会"
 date: "2020.2.1"
 output:
+  word_document: default
+  pdf_document: default
   html_document:
     df_print: paged
 ---
