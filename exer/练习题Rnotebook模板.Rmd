@@ -6,11 +6,9 @@ output: html_notebook
 这是一个 [R Markdown](http://rmarkdown.rstudio.com) 笔记本. 当你执行其中的代码时，结果将出现在代码段中. 
 在代码段中点击 *Run* 按钮或用键盘执行 *Ctrl+Shift+Enter*. 
 
-
 ```{r}
 plot(cars)
 ```
 
 加一段新代码可点击 *Insert Chunk* 按钮或 使用快捷键 *Ctrl+Alt+I*.
 (点击 *Preview* 按钮或 *Ctrl+Shift+K* 显示结果文档）.
-
