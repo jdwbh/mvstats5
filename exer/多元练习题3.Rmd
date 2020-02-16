@@ -1,0 +1,64 @@
+---
+title: "3 多元数据的直观表示"
+author: "王斌会"
+date: "2020年2月1日"
+output: word_document
+---
+
+```{r setup}
+rm(list=ls())                               #清理内存
+options(digits=4)                           #输出结果位数
+par(mar=c(4,4,2,1))                         #设置图片输出位置
+library(openxlsx)
+library(knitr)
+library(tcltk)
+library(aplpack)
+source('msaR.r')
+```
+
+## 3.1
+　　**探讨雷达图与星相图的区别，并编制绘制的R语言函数。**     
+　　雷达图是把各组数据的各项指标值画在以个图形上，而星相图是分开画在多个雷达图上，星相图比雷达图能表现的数据更多。     
+　　雷达图也可以用画星相图的stars函数：stars(X,locations=c(0,0),radius=F, key.loc=c(0,0),lty=2)，或者安装fmsb包，用radarchart函数。
+
+## 3.2
+　　**下表是2004年广东省各市高新技术产品情况，试按本章讲的多元图示方法对该资料进行直观分析。**     
+
+```{r read3,comment=''}
+d3.2=read.xlsx('mvexec4_hy.xlsx',sheet='E3.2',rowNames=T)        #读取数据
+kable(d3.2)    #显示数据
+```
+
+```{r block3.1,comment=''}
+
+```
+### 3.2.1 均值条图与饼图    
+
+```{r block3.2}
+
+```
+
+```{r block3.3}
+
+```
+
+
+### 3.2.2 箱尾图
+```{r block3.4}
+
+```
+
+### 3.2.3 星相图
+```{r block3.5}
+
+```
+
+### 3.2.4 脸谱图
+```{r block3.6,comment=''}
+
+```
+
+### 3.2.5 调和曲线图
+```{r block3.7}
+
+```
