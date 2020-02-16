@@ -20,6 +20,7 @@ $$f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}}e^{ -\frac{1}{2}\left(\frac{x-\
 X <- rnorm(1000)
 summary(X)
 ```
+
 随机数的直方图和密度曲线
 ```{r}
 hist(X, prob = T);lines(density(X))
