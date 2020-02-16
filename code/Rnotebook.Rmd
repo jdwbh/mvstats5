@@ -27,5 +27,5 @@ hist(X, prob = T);lines(density(X))
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 加一段新代码可点击 *Insert Chunk* 按钮或 使用快捷键 *Ctrl+Alt+I*.
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+(click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
 (点击 *Preview* 按钮或 *Ctrl+Shift+K* 显示结果文档）.
