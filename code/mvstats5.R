@@ -4,11 +4,10 @@
 #********  数据文件: mvstats5.xlsx"         *******
 #********  修改时间：王斌会 2020.2.1      *******
 #**************************************************
-setwd("E:/mvstats5") #设置目录
+
+#setwd("E:/mvstats5")   #设置自定义工作目录E:/mvstats5
 
 source('msaR.R')                   #加载自定函数
-#library(msaR)                     #加载自定义包  
-library(openxlsx)                  #加载读取Excel数据包
 
 #【输出设置】
 options(digits=4)
@@ -17,7 +16,7 @@ par(mar=c(5,5,2,1))
 # 第1章 多元统计分析概述 -----------------------
 A=matrix(1:20,5,4); A              #生成5行4列的矩阵
 X=rnorm(50); round(X,4)            #产生50个标准正态随机数
-.iplot(); hist(X,prob=TRUE)        #做数据的直方图
+hist(X,prob=TRUE)                  #做数据的直方图
 lines(density(X),col='red')        #添加密度函数曲线 
 
 # 第2章 多元数据的数学表达 ---------------------
@@ -89,7 +88,10 @@ read.csv("test1.csv")                  #读取数据
 write.csv(X,file = 'test2.csv',row.names = F)  #保存数据
 read.csv("test2.csv")                  #读取数据
 ## —— 2.6  多元数据简单R分析 ----
-#d2.1=read_excel('mvstats5.xlsx',sheet='d2.1') #读取mvstats5.xlsx表格d2.2数据
+# 说明：在MOOC中我们用的是readxl包，即library(readxl)
+# d2.1=read_excel('mvstats5.xlsx',sheet='d2.1') #读取mvstats5.xlsx表格d2.2数据
+# 在第五版书稿中，我们采用openxlsx包读取Excel的xlsx格式数据
+library(openxlsx)                  #加载读取Excel数据包
 d2.1=read.xlsx('mvstats5.xlsx','d2.1') #读取mvstats5.xlsx表格d2.1数据
 head(d2.1);tail(d2.1)                  #显示数据的前6行和后6行
 
