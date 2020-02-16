@@ -25,7 +25,7 @@ source('msaR.r')
 　　**下表是2004年广东省各市高新技术产品情况，试按本章讲的多元图示方法对该资料进行直观分析。**     
 
 ```{r read3,comment=''}
-d3.2=read.xlsx('mvexec4_hy.xlsx',sheet='E3.2',rowNames=T)        #读取数据
+d3.2=read.xlsx('mvexer5.xlsx',sheet='E3.2',rowNames=T)        #读取数据
 kable(d3.2)    #显示数据
 ```
 

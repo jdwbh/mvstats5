@@ -17,7 +17,7 @@ library(leaps)
 ## 4.1
    **一家保险公司十分关心其总公司营业部加班的程度，决定认真调查一下现状。经过10周时间，收集了该公司每周加班工作时间y（小时）的数据和签发的新保单数目x（张），数据见下表。**　　　
 ```{r read4.1,comment=''}
-d4.1=read.xlsx('mvexec4_hy.xlsx',sheet='E4.1')   #读取数据
+d4.1=read.xlsx('mvexer5.xlsx',sheet='E4.1')   #读取数据
 kable(d4.1)   #显示数据
 ```
 
