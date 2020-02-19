@@ -3,13 +3,13 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-该文档是由Rstudio的R notebook菜单自动生成并加以修改的，建议大家在[Rstudio](https://rstudio.com)中使用!
+**该文档是由Rstudio的R notebook菜单自动生成并加以修改的，建议大家在[Rstudio](https://rstudio.com)中使用!**
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+This is an R Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
-这是一个 [R Markdown](http://rmarkdown.rstudio.com) 笔记本. 当你执行其中的代码时，结果将出现在代码段中. 
+这是一个 R [notebook]笔记本. 当你执行其中的代码时，结果将出现在代码段中. 
 
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+Try executing this chunk by clicking the *Run* button within the chunk or by pressing *Ctrl+Shift+Enter*. 
 
 在代码段中点击 *Run* 按钮或用键盘执行 *Ctrl+Shift+Enter*. 
 
@@ -23,7 +23,9 @@ plot(cars)
 ## 正态分布函数：
 
 $$f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}}e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }$$
+
 使用 **rnorm** 函数生成1000个来自正态分布的随机数
+
 ```{r}
 X <- rnorm(1000)
 summary(X)
