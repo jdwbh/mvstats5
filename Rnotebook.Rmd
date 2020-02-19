@@ -1,0 +1,46 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+**该文档是由Rstudio的R notebook菜单自动生成并加以修改的，建议大家在[Rstudio](https://rstudio.com)中使用!**
+
+This is an R Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+这是一个 R [notebook]笔记本. 当你执行其中的代码时，结果将出现在代码段中. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by pressing *Ctrl+Shift+Enter*. 
+
+在代码段中点击 *Run* 按钮或用键盘执行 *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+
+# 正态分布
+
+## 正态分布函数：
+
+$$f(x;\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}}e^{ -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2 }$$
+
+使用 **rnorm** 函数生成1000个来自正态分布的随机数
+
+```{r}
+X <- rnorm(1000)
+summary(X)
+```
+
+随机数的直方图和密度曲线
+
+```{r}
+hist(X, prob = T);lines(density(X))
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+加一段新代码可点击 *Insert Chunk* 按钮或 使用快捷键 *Ctrl+Alt+I*.
+
+(click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+(点击 *Preview* 按钮或 *Ctrl+Shift+K* 显示结果文档）.
